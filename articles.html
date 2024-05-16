@@ -136,9 +136,11 @@
         }
 
         .article img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 400px;
             height: auto;
             border-radius: 10px;
+            object-fit: cover; /* Ensures the image scales properly */
         }
 
         .article p {
@@ -239,7 +241,7 @@
             </div>
             <div class="right">
                 <div class="toggle-btn">Show PDF</div>
-                <img src="assets/PhysicsProjectAbstract" alt="Article Image">
+                <img src="assets/PhysicsProjectAbstract.jpg" alt="Article Image">
                 <iframe class="pdf-embed" src="assets/PhysicsProject.pdf"></iframe>
             </div>
         </div>
