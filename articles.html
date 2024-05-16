@@ -146,6 +146,24 @@
             border: none;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .toggle-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0056b3;
         }
     </style>
     <script>
@@ -163,6 +181,19 @@
                         window.location.href = target;
                     }, 500);
                 });
+            });
+
+            const toggleBtn = document.querySelector(".toggle-btn");
+            const pdfEmbed = document.querySelector(".pdf-embed");
+
+            toggleBtn.addEventListener("click", () => {
+                if (pdfEmbed.style.display === "none" || pdfEmbed.style.display === "") {
+                    pdfEmbed.style.display = "block";
+                    toggleBtn.textContent = "Hide PDF";
+                } else {
+                    pdfEmbed.style.display = "none";
+                    toggleBtn.textContent = "Show PDF";
+                }
             });
         });
     </script>
@@ -186,6 +217,7 @@
             <img src="assets/PhysicsProjectAbstract" alt="Article Image">
             <p>Excerpt of your article. <a href="link/to/full-article">Read more</a></p>
             <p>Excerpt of your PDF article.</p>
+            <div class="toggle-btn">Show PDF</div>
             <iframe class="pdf-embed" src="assets/PhysicsProject.pdf"></iframe>
         </div>
         <!-- Add more articles as needed -->
