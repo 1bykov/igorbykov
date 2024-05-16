@@ -109,6 +109,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .article:hover {
@@ -118,6 +120,19 @@
 
         .article h3 {
             color: #ffffff;
+            width: 100%;
+        }
+
+        .article .left,
+        .article .right {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .article .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .article img {
@@ -160,6 +175,8 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            width: 100%;
+            text-align: center;
         }
 
         .toggle-btn:hover {
@@ -185,13 +202,16 @@
 
             const toggleBtn = document.querySelector(".toggle-btn");
             const pdfEmbed = document.querySelector(".pdf-embed");
+            const articleImage = document.querySelector(".article img");
 
             toggleBtn.addEventListener("click", () => {
                 if (pdfEmbed.style.display === "none" || pdfEmbed.style.display === "") {
                     pdfEmbed.style.display = "block";
+                    articleImage.style.display = "none";
                     toggleBtn.textContent = "Hide PDF";
                 } else {
                     pdfEmbed.style.display = "none";
+                    articleImage.style.display = "block";
                     toggleBtn.textContent = "Show PDF";
                 }
             });
@@ -213,10 +233,15 @@
     <main>
         <h2>Articles</h2>
         <div class="article">
-            <h3>Bridging the Gap Between Used EV Batteries and Grid Storage</h3>
-            <p>Summary.</p>
-            <div class="toggle-btn">Show PDF</div>
-            <iframe class="pdf-embed" src="assets/PhysicsProject.pdf"></iframe>
+            <div class="left">
+                <h3>Bridging the Gap Between Used EV Batteries and Grid Storage</h3>
+                <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
+            </div>
+            <div class="right">
+                <div class="toggle-btn">Show PDF</div>
+                <img src="assets/PhysicsProjectAbstract.jpg" alt="Article Image">
+                <iframe class="pdf-embed" src="assets/PhysicsProject.pdf"></iframe>
+            </div>
         </div>
         <!-- Add more articles as needed -->
     </main>
