@@ -1,9 +1,87 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .project, .article {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project img, .article img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
 
 <body>
-  <h1>YOUR NAME</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+    <header>
+        <h1>YOUR NAME</h1>
+        <p>Graduate in [Your Major]</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my personal page! I am a recent graduate with expertise in Excel and Python. Here you can find my projects and articles.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project 1: Excel Dashboard</h3>
+                <img src="path/to/your/excel-project-image.png" alt="Excel Dashboard Project">
+                <p>Description of your Excel project, highlighting key features and what you achieved.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2: Python Data Analysis</h3>
+                <img src="path/to/your/python-project-image.png" alt="Python Data Analysis Project">
+                <p>Description of your Python project, detailing the data analysis techniques and results.</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+
+        <section id="articles">
+            <h2>Articles</h2>
+            <div class="article">
+                <h3>Article 1: Title of Your Article</h3>
+                <img src="path/to/article-image.png" alt="Article Image">
+                <p>Excerpt of your article. <a href="link/to/full-article">Read more</a></p>
+            </div>
+            <div class="article">
+                <h3>Article 2: Another Article Title</h3>
+                <img src="path/to/another-article-image.png" alt="Article Image">
+                <p>Excerpt of your article. <a href="link/to/full-article">Read more</a></p>
+            </div>
+            <!-- Add more articles as needed -->
+        </section>
+    </main>
 </body>
 
 </html>
