@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graduate Portfolio - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #1c1e21;
+            color: #ffffff;
             padding: 1rem;
             text-align: center;
             position: sticky;
@@ -26,7 +27,7 @@
         nav a {
             display: inline-block;
             margin: 0 1rem;
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
         }
@@ -40,15 +41,13 @@
             justify-content: center;
             align-items: center;
             height: calc(100vh - 72px);
-            background-image: url('background-image.jpg'); /* Replace with a relevant background image */
-            background-size: cover;
-            background-position: center;
-            color: #333;
+            background-color: #1c1e21;
+            color: #ffffff;
             text-align: center;
         }
 
         .intro {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(28, 30, 33, 0.9);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -68,7 +67,7 @@
             display: inline-block;
             padding: 0.75rem 1.5rem;
             margin: 0.25rem;
-            color: #fff;
+            color: #ffffff;
             background-color: #007bff;
             border: none;
             border-radius: 5px;
@@ -78,6 +77,28 @@
 
         .btn:hover {
             background-color: #0056b3;
+        }
+
+        .profile-photo {
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            width: 150px;
+            height: 150px;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            margin: 0 0.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
         }
     </style>
 </head>
@@ -96,11 +117,17 @@
 
     <main>
         <div class="intro">
+            <img src="path/to/your-photo.jpg" alt="Your Photo" class="profile-photo">
             <h2>Welcome to My Personal Page</h2>
-            <p>Hi, I am a recent graduate with expertise in Excel and Python. Explore my projects and articles by navigating through the menu.</p>
+            <p>Hello, I am [Your Name], a recent graduate in [Your Major] with expertise in Excel and Python. I am passionate about data analysis and creating efficient solutions to complex problems. Please explore my projects and articles to learn more about my work and interests.</p>
             <a href="excel-projects.html" class="btn">Excel Projects</a>
             <a href="python-projects.html" class="btn">Python Projects</a>
             <a href="articles.html" class="btn">Articles</a>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+            </div>
         </div>
     </main>
 </body>
