@@ -76,14 +76,10 @@
         }
 
         main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
+            padding: 2rem;
             background: linear-gradient(135deg, #1c1e21 25%, #2c3e50 75%);
             color: #ffffff;
-            text-align: center;
-            padding: 2rem;
+            min-height: calc(100vh - 72px);
             position: relative;
             overflow: hidden;
             opacity: 1;
@@ -157,18 +153,14 @@
         }
 
         .timeline-container {
-            position: absolute;
-            right: 2rem;
-            top: 2rem;
-            width: 250px;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: rgba(28, 30, 33, 0.9);
+            color: #ffffff;
             padding: 1rem;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             overflow-y: auto;
             max-height: calc(100vh - 4rem);
-            z-index: 2;
+            margin-top: 2rem;
         }
 
         .timeline {
@@ -212,7 +204,7 @@
 
         .timeline-entry p {
             margin: 0.5rem 0 0 0;
-            color: #333333;
+            color: #cccccc;
             font-size: 0.875rem;
         }
 
@@ -246,7 +238,6 @@
             }
 
             .timeline-container {
-                position: static;
                 width: auto;
                 margin-top: 2rem;
             }
@@ -297,29 +288,29 @@
                     </div>
                 </div>
             </div>
-        </main>
 
-        <div class="timeline-container">
-            <h2>Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-entry">
-                    <h3>2021</h3>
-                    <p>Started my Bachelor's degree in Computer Science at XYZ University. Learned the basics of programming, data structures, and algorithms.</p>
-                </div>
-                <div class="timeline-entry">
-                    <h3>2022</h3>
-                    <p>Completed an internship at ABC Company, working on web development projects using HTML, CSS, and JavaScript. Gained practical experience and teamwork skills.</p>
-                </div>
-                <div class="timeline-entry">
-                    <h3>2023</h3>
-                    <p>Joined a research project focusing on artificial intelligence and machine learning. Developed a deeper understanding of AI technologies and their applications.</p>
-                </div>
-                <div class="timeline-entry">
-                    <h3>2024</h3>
-                    <p>Expected to graduate with honours and plan to pursue a Master's degree in Data Science. Aiming to specialise in big data analysis and predictive modelling.</p>
+            <div class="timeline-container">
+                <h2>Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-entry">
+                        <h3>2021</h3>
+                        <p>Started my Bachelor's degree in Computer Science at XYZ University. Learned the basics of programming, data structures, and algorithms.</p>
+                    </div>
+                    <div class="timeline-entry">
+                        <h3>2022</h3>
+                        <p>Completed an internship at ABC Company, working on web development projects using HTML, CSS, and JavaScript. Gained practical experience and teamwork skills.</p>
+                    </div>
+                    <div class="timeline-entry">
+                        <h3>2023</h3>
+                        <p>Joined a research project focusing on artificial intelligence and machine learning. Developed a deeper understanding of AI technologies and their applications.</p>
+                    </div>
+                    <div class="timeline-entry">
+                        <h3>2024</h3>
+                        <p>Expected to graduate with honours and plan to pursue a Master's degree in Data Science. Aiming to specialise in big data analysis and predictive modelling.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </body>
 
