@@ -147,6 +147,33 @@
         .social-icons a:hover {
             color: #007bff;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                height: auto;
+                padding: 1rem;
+            }
+
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-photo {
+                margin: 0 0 1rem 0;
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
