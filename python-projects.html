@@ -87,8 +87,8 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.03), transparent 25%),
-                        radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.03), transparent 25%);
+            background: radial-gradient(circle at 25% 50%, rgba(255, 255, 255, 0.03), transparent 25%),
+                        radial-gradient(circle at 25% 50%, rgba(255, 255, 255, 0.03), transparent 25%);
             background-size: 100% 100%;
             top: 0;
             left: 0;
@@ -109,6 +109,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .project:hover {
@@ -118,12 +120,56 @@
 
         .project h3 {
             color: #ffffff;
+            width: 100%;
+        }
+
+        .project .left,
+        .project .right {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .project .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .project .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
         }
 
         .project img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .project .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .project .image-wrapper:hover .overlay {
+            opacity: 1;
         }
 
         .project p {
@@ -156,6 +202,14 @@
                     }, 500);
                 });
             });
+
+            const images = document.querySelectorAll(".project .image-wrapper");
+            images.forEach(wrapper => {
+                wrapper.addEventListener("click", function () {
+                    const pdfUrl = this.getAttribute("data-pdf");
+                    window.open(pdfUrl, '_blank');
+                });
+            });
         });
     </script>
 </head>
@@ -173,10 +227,18 @@
 
     <main>
         <h2>Python Projects</h2>
+        <!-- Add more projects as needed -->
         <div class="project">
-            <h3>Neural Networks for Muon-Neutrino Event Detection</h3>
-            <img src="path/to/your/python-project-image.png" alt="Python Data Analysis Project">
-            <p>The project has made strides in understanding particles called neutrinos. Using advanced machine learning, I developed a system that can accurately identify different types of neutrino interactions. This system, trained with data from the NOvA experiment, showed that balanced datasets (with equal representation of different interaction types) significantly improved its accuracy, achieving an impressive 81% success rate. Moreover, the system performed best at certain energy levels, highlighting the importance of data balance and robustness. These findings not only advance our understanding of neutrinos but also enhance experimental designs in particle physics.These cutting-edge techniques have significant potential to transform the finance industry by addressing some critical challenges. For example, financial data often suffer from imbalances, such as a large number of non-fraudulent transactions compared to fraudulent ones. By applying the data balancing methods from this project, banks can improve their fraud detection systems, making them more accurate and reliable. This means fewer false alarms and better identification of real fraud cases. Additionally, the advanced machine learning models used in this project can enhance predictive analytics in finance, leading to better credit scoring, more precise risk assessments, and smarter investment strategies. By adopting these innovative approaches, the finance sector can make better decisions, reduce risks, and ultimately create more value for customers and stakeholders.</p>
+            <div class="left">
+                <h3>Neural Networks for Muon-Neutrino Event Detection</h3>
+                <p>The project has made strides in understanding particles called neutrinos. Using advanced machine learning, I developed a system that can accurately identify different types of neutrino interactions. This system, trained with data from the NOvA experiment, showed that balanced datasets (with equal representation of different interaction types) significantly improved its accuracy, achieving an impressive 81% success rate. Moreover, the system performed best at certain energy levels, highlighting the importance of data balance and robustness. These findings not only advance our understanding of neutrinos but also enhance experimental designs in particle physics. These cutting-edge techniques have significant potential to transform the finance industry by addressing some critical challenges. For example, financial data often suffer from imbalances, such as a large number of non-fraudulent transactions compared to fraudulent ones. By applying the data balancing methods from this project, banks can improve their fraud detection systems, making them more accurate and reliable. This means fewer false alarms and better identification of real fraud cases. Additionally, the advanced machine learning models used in this project can enhance predictive analytics in finance, leading to better credit scoring, more precise risk assessments, and smarter investment strategies. By adopting these innovative approaches, the finance sector can make better decisions, reduce risks, and ultimately create more value for customers and stakeholders.</p>
+            </div>
+            <div class="right">
+                <div class="image-wrapper" data-pdf="path/to/your/python-project.pdf">
+                    <img src="path/to/your/python-project-image.png" alt="Python Data Analysis Project">
+                    <div class="overlay">Press to view</div>
+                </div>
+            </div>
         </div>
         <!-- Add more projects as needed -->
     </main>
