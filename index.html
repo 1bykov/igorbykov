@@ -71,7 +71,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 72px);
+            min-height: calc(100vh - 72px);
             background: linear-gradient(135deg, #1c1e21 25%, #2c3e50 75%);
             color: #ffffff;
             text-align: center;
@@ -151,13 +151,16 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             main {
-                height: auto;
+                height: 100vh;
                 padding: 1rem;
+                flex-direction: column;
+                justify-content: flex-start;
             }
 
             .intro {
                 flex-direction: column;
                 text-align: center;
+                padding: 1rem;
             }
 
             .profile-photo {
