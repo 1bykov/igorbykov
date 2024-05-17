@@ -136,31 +136,39 @@
             position: relative;
         }
 
-        .article img {
+        .article .image-wrapper {
+            position: relative;
             width: 100%;
             max-width: 400px;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
             cursor: pointer;
         }
 
-        .article img::before {
-            content: 'Press to view';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
+        .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
         }
 
-        .article img:hover::before {
+        .article .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .article .image-wrapper:hover .overlay {
             opacity: 1;
         }
 
@@ -195,9 +203,9 @@
                 });
             });
 
-            const images = document.querySelectorAll(".article img");
-            images.forEach(image => {
-                image.addEventListener("click", function () {
+            const images = document.querySelectorAll(".article .image-wrapper");
+            images.forEach(wrapper => {
+                wrapper.addEventListener("click", function () {
                     const pdfUrl = this.getAttribute("data-pdf");
                     window.open(pdfUrl, '_blank');
                 });
@@ -226,7 +234,10 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <img src="assets/PhPrCover" alt="Article Image" data-pdf="assets/PhysicsProject.pdf">
+                <div class="image-wrapper" data-pdf="assets/PhysicsProject.pdf">
+                    <img src="assets/PhPrCover.png" alt="Article Image">
+                    <div class="overlay">Press to view</div>
+                </div>
             </div>
         </div>
         <!-- Add more articles as needed -->
@@ -236,7 +247,10 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <img src="assets/PhPrCover" alt="Article Image" data-pdf="assets/Article2.pdf">
+                <div class="image-wrapper" data-pdf="assets/Article2.pdf">
+                    <img src="assets/PhPrCover.png" alt="Article Image">
+                    <div class="overlay">Press to view</div>
+                </div>
             </div>
         </div>
         <!-- Add more articles as needed -->
@@ -246,7 +260,10 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <img src="assets/PhPrCover" alt="Article Image" data-pdf="assets/Article3.pdf">
+                <div class="image-wrapper" data-pdf="assets/Article3.pdf">
+                    <img src="assets/PhPrCover.png" alt="Article Image">
+                    <div class="overlay">Press to view</div>
+                </div>
             </div>
         </div>
         <!-- Add more articles as needed -->
@@ -256,7 +273,10 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <img src="assets/PhPrCover" alt="Article Image" data-pdf="assets/Article4.pdf">
+                <div class="image-wrapper" data-pdf="assets/Article4.pdf">
+                    <img src="assets/PhPrCover.png" alt="Article Image">
+                    <div class="overlay">Press to view</div>
+                </div>
             </div>
         </div>
         <!-- Add more articles as needed -->
