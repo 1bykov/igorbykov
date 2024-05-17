@@ -141,6 +141,7 @@
             height: auto;
             border-radius: 10px;
             object-fit: cover; /* Ensures the image scales properly */
+            cursor: pointer;
         }
 
         .article p {
@@ -166,24 +167,6 @@
             display: none;
             margin-top: 1rem;
         }
-
-        .toggle-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #007bff;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 50%;
-            text-align: center;
-        }
-
-        .toggle-btn:hover {
-            background-color: #0056b3;
-        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -202,20 +185,13 @@
                 });
             });
 
-            const toggleBtn = document.querySelector(".toggle-btn");
-            const pdfEmbed = document.querySelector(".pdf-embed");
-            const articleImage = document.querySelector(".article img");
-
-            toggleBtn.addEventListener("click", () => {
-                if (pdfEmbed.style.display === "none" || pdfEmbed.style.display === "") {
+            const images = document.querySelectorAll(".article img");
+            images.forEach(image => {
+                image.addEventListener("click", function () {
+                    const pdfEmbed = this.nextElementSibling;
                     pdfEmbed.style.display = "block";
-                    articleImage.style.display = "none";
-                    toggleBtn.textContent = "Hide PDF";
-                } else {
-                    pdfEmbed.style.display = "none";
-                    articleImage.style.display = "block";
-                    toggleBtn.textContent = "Show PDF";
-                }
+                    pdfEmbed.scrollIntoView({ behavior: 'smooth' });
+                });
             });
         });
     </script>
@@ -241,7 +217,6 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <div class="toggle-btn">Show PDF</div>
                 <img src="assets/PhPrPic.png" alt="Article Image">
                 <iframe class="pdf-embed" src="assets/PhysicsProject.pdf"></iframe>
             </div>
@@ -253,9 +228,8 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <div class="toggle-btn">Show PDF</div>
                 <img src="assets/PhPrPic.png" alt="Article Image">
-                <iframe class="pdf-embed" src=" ... "></iframe>
+                <iframe class="pdf-embed" src="assets/Article2.pdf"></iframe>
             </div>
         </div>
         <!-- Add more articles as needed -->
@@ -265,9 +239,8 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <div class="toggle-btn">Show PDF</div>
                 <img src="assets/PhPrPic.png" alt="Article Image">
-                <iframe class="pdf-embed" src=" ... "></iframe>
+                <iframe class="pdf-embed" src="assets/Article3.pdf"></iframe>
             </div>
         </div>
         <!-- Add more articles as needed -->
@@ -277,9 +250,8 @@
                 <p>Summary of the article goes here. This text provides an overview of the content and key points discussed in the article.</p>
             </div>
             <div class="right">
-                <div class="toggle-btn">Show PDF</div>
                 <img src="assets/PhPrPic.png" alt="Article Image">
-                <iframe class="pdf-embed" src=" ... "></iframe>
+                <iframe class="pdf-embed" src="assets/Article4.pdf"></iframe>
             </div>
         </div>
         <!-- Add more articles as needed -->
